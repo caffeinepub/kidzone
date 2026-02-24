@@ -1,0 +1,114 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-welcoming-home-screen-with-a-large-animated-title-colorful-character-mascot-or-illustration-and-clearly-labeled-activity-buttons-that-a-child-can-independently-navigate",
+      "featureTitle": "Create a welcoming home screen with a large animated title, colorful character mascot or illustration, and clearly labeled activity buttons that a child can independently navigate.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/index.css",
+        "frontend/src/pages/Home.tsx",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-a-simple-number-letter-learning-section-where-kids-can-tap-click-on-letters-a-z-and-numbers-1-20-to-hear-or-see-their-name-displayed-in-a-large-animated-pop-up-card",
+      "featureTitle": "Implement a simple Number & Letter Learning section where kids can tap/click on letters A–Z and numbers 1–20 to hear or see their name displayed in a large, animated pop-up card.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/LearningCard.tsx",
+        "frontend/src/components/LearningPopup.tsx",
+        "frontend/src/pages/Learning.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-a-simple-memory-match-mini-game-with-colorful-emoji-or-animal-cards-cards-are-placed-face-down-and-a-child-flips-two-at-a-time-to-find-matching-pairs-track-and-display-the-number-of-matches-found",
+      "featureTitle": "Implement a simple Memory Match mini-game with colorful emoji or animal cards. Cards are placed face-down and a child flips two at a time to find matching pairs. Track and display the number of matches found.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/MemoryCard.tsx",
+        "frontend/src/hooks/useMemoryGame.ts",
+        "frontend/src/pages/MemoryMatch.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-a-simple-color-draw-canvas-where-kids-can-pick-a-color-from-a-palette-and-draw-freely-with-their-mouse-or-finger-touch-support-plus-a-clear-button-to-reset-the-canvas",
+      "featureTitle": "Implement a simple Color & Draw canvas where kids can pick a color from a palette and draw freely with their mouse or finger (touch support), plus a 'Clear' button to reset the canvas.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/ColorPalette.tsx",
+        "frontend/src/hooks/useDrawingCanvas.ts",
+        "frontend/src/pages/Draw.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-a-consistent-joyful-visual-theme-across-the-entire-app-bright-primary-colors-reds-yellows-greens-oranges-rounded-bubbly-shapes-large-chunky-typography-e-g-a-rounded-sans-serif-star-confetti-decorative-accents-and-high-contrast-elements-to-ensure-readability-for-young-children-navigation-must-be-icon-first-with-large-tap-targets-minimum-48-48px",
+      "featureTitle": "Apply a consistent, joyful visual theme across the entire app: bright primary colors (reds, yellows, greens, oranges), rounded bubbly shapes, large chunky typography (e.g., a rounded sans-serif), star/confetti decorative accents, and high-contrast elements to ensure readability for young children. Navigation must be icon-first with large tap targets (minimum 48×48px).",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/DecorativeAccents.tsx",
+        "frontend/src/components/Layout.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

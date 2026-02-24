@@ -1,0 +1,169 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Kids Interactive App — Initial Build",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Create a welcoming home screen with animated title, colorful mascot, and activity navigation buttons",
+      "acceptanceCriteria": [
+        "Home screen displays a large, readable title with playful typography",
+        "At least three activity section buttons are visible and labeled with both icons and text",
+        "Buttons respond with a fun hover/tap animation",
+        "Layout is fully responsive and works on tablet-sized screens"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Home.tsx",
+          "operation": "create",
+          "description": "Create the home screen page with large animated title, mascot integration (using frontend/public/assets/generated/mascot-sun.dim_256x256.png), confetti banner decoration (using frontend/public/assets/generated/confetti-banner.dim_800x120.png), and activity navigation buttons (Letters & Numbers, Memory Match, Draw & Color). Include playful hover animations and ensure minimum 48×48px tap targets. Use rounded bubbly shapes and bright primary colors consistent with the kid-friendly theme."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire the Home page as the default route and set up React Router with routes for all activity sections (home, learning, memory-match, draw). Ensure navigation is icon-first with large tap targets."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Add global theme styles for kid-friendly design: bright primary colors (reds, yellows, greens, oranges), rounded bubbly shapes, large chunky typography using a rounded sans-serif font (e.g., Nunito or Fredoka), high-contrast text, and decorative accent styles for stars/confetti elements."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend Tailwind theme with kid-friendly color palette (bright primary colors), rounded shape utilities, and typography settings for large chunky text. Ensure minimum tap target sizes are easily achievable."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Implement Number & Letter Learning section with interactive grid and animated pop-up cards",
+      "acceptanceCriteria": [
+        "A grid of letter and number cards is displayed",
+        "Tapping a card shows a full-screen animated card with the letter/number rendered in large, colorful text",
+        "A 'Back' button returns the child to the grid"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Learning.tsx",
+          "operation": "create",
+          "description": "Create the learning section page with a responsive grid displaying letters A–Z and numbers 1–20 as tappable cards. Each card shows an icon and label. Include confetti decoration accents. Ensure minimum 48×48px tap targets and bright colors."
+        },
+        {
+          "path": "frontend/src/components/LearningCard.tsx",
+          "operation": "create",
+          "description": "Create a reusable card component for letters and numbers with tap/click handler. Include hover animations and visual feedback. Use rounded shapes and bright colors."
+        },
+        {
+          "path": "frontend/src/components/LearningPopup.tsx",
+          "operation": "create",
+          "description": "Create a full-screen animated pop-up modal that displays the selected letter or number in large, colorful, animated text. Include a large 'Back' button with icon. Use playful entrance/exit animations and star/confetti accents."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for the Learning page at /learning and ensure it's wired to navigation from the Home page."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Implement Memory Match mini-game with emoji/animal cards, flip animations, match tracking, and best score display",
+      "acceptanceCriteria": [
+        "A 4×4 grid of face-down cards is displayed",
+        "Clicking a card flips it with an animation to reveal its image",
+        "Two revealed non-matching cards flip back after a short delay",
+        "Matching pairs remain face-up and are highlighted",
+        "A match counter updates after each successful pair",
+        "A congratulatory message appears when all pairs are matched"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/MemoryMatch.tsx",
+          "operation": "create",
+          "description": "Create the Memory Match game page with a 4×4 grid of face-down cards using animal images from frontend/public/assets/generated/animal-cards.dim_512x256.png (extract individual animals: cat, dog, frog, rabbit, bear, duck, owl, fox). Implement game logic for card flipping, matching pairs, move counter, and congratulatory message on completion. Display the best score retrieved from backend using getBestScore(). Include a 'New Game' button. Use bright colors, rounded shapes, and star/confetti accents."
+        },
+        {
+          "path": "frontend/src/components/MemoryCard.tsx",
+          "operation": "create",
+          "description": "Create a reusable memory card component with flip animation, face-down/face-up states, and highlighting for matched pairs. Use CSS transforms for smooth flip animations."
+        },
+        {
+          "path": "frontend/src/hooks/useMemoryGame.ts",
+          "operation": "create",
+          "description": "Create a custom hook to manage Memory Match game state: card shuffle, flip logic, match detection, move counter, win condition check, and backend score persistence using recordScore() and getBestScore() methods from backend interface."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for the MemoryMatch page at /memory-match and ensure it's wired to navigation from the Home page."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Implement Color & Draw canvas with color palette, drawing support for mouse and touch, and clear button",
+      "acceptanceCriteria": [
+        "A full-width drawing canvas is rendered",
+        "A color palette with at least 8 bright colors is displayed",
+        "Mouse drag and touch drag both draw on the canvas",
+        "A 'Clear' button wipes the canvas",
+        "Brush strokes are smooth and rounded"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Draw.tsx",
+          "operation": "create",
+          "description": "Create the drawing canvas page with a full-width HTML5 canvas element, color palette with 8+ bright colors, mouse and touch drawing support with smooth rounded brush strokes, and a large 'Clear' button with icon. Include confetti decoration accents and ensure responsive layout."
+        },
+        {
+          "path": "frontend/src/components/ColorPalette.tsx",
+          "operation": "create",
+          "description": "Create a color palette component displaying at least 8 bright colors as large tappable buttons (minimum 48×48px). Highlight the selected color with visual feedback. Use rounded bubbly shapes."
+        },
+        {
+          "path": "frontend/src/hooks/useDrawingCanvas.ts",
+          "operation": "create",
+          "description": "Create a custom hook to manage canvas drawing state: mouse/touch event handlers, color selection, brush stroke rendering with smooth rounded lines, and canvas clear functionality. Handle both mouse and touch input seamlessly."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for the Draw page at /draw and ensure it's wired to navigation from the Home page."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Apply consistent joyful visual theme with bright colors, rounded shapes, chunky typography, and decorative accents across entire app",
+      "acceptanceCriteria": [
+        "All screens use the same color palette and typeface",
+        "All interactive elements have a minimum tap target of 48×48px",
+        "No small or hard-to-read text appears anywhere in the UI",
+        "Decorative accents (stars, confetti shapes) appear consistently in section headers"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Layout.tsx",
+          "operation": "create",
+          "description": "Create a shared layout component that wraps all pages with consistent header (including mascot and confetti decorations using generated images), navigation bar with large icon-first buttons (minimum 48×48px tap targets), and footer. Apply consistent spacing, rounded shapes, and bright colors throughout."
+        },
+        {
+          "path": "frontend/src/components/DecorativeAccents.tsx",
+          "operation": "create",
+          "description": "Create a reusable component for decorative star/confetti accents to be used in section headers across all pages. Use the confetti banner from frontend/public/assets/generated/confetti-banner.dim_800x120.png and additional CSS-based star shapes."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wrap all routes with the Layout component to ensure consistent visual theme and navigation across all pages."
+        },
+        {
+          "path": "frontend/public/index.html",
+          "operation": "modify",
+          "description": "Add link tag to import a rounded sans-serif Google Font (e.g., Nunito or Fredoka) for chunky kid-friendly typography throughout the app."
+        }
+      ]
+    }
+  ]
+}

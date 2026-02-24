@@ -1,0 +1,19 @@
+{
+  "frontend/index.html": "HTML entry point with Google Fonts (Fredoka One + Nunito) loaded for kid-friendly typography and updated page title.",
+  "frontend/src/index.css": "Global styles with a bright kid-friendly OKLCH color palette (coral red, sunny yellow, grass green, sky blue), custom animations (float, wiggle, popIn, starPulse), and card-flip 3D transform utilities.",
+  "frontend/tailwind.config.js": "Extended Tailwind config with kid color tokens (kid-red, yellow, green, blue, orange, purple, pink, teal), display/body font families, bubbly border radii, and kid-style box shadows.",
+  "frontend/src/hooks/useQueries.ts": "React Query hooks for fetching the best memory match score (useGetBestScore) and recording a new score (useRecordScore) via the backend actor.",
+  "frontend/src/hooks/useMemoryGame.ts": "Custom hook managing all Memory Match game state including card shuffling, flip logic, match detection, move counting, and win condition.",
+  "frontend/src/hooks/useDrawingCanvas.ts": "Custom hook managing HTML5 canvas drawing with mouse and touch support, color selection, brush size, and canvas clear functionality.",
+  "frontend/src/components/Layout.tsx": "Shared layout wrapper with sticky header (mascot + logo), desktop top nav, mobile bottom nav, and footer with attribution.",
+  "frontend/src/components/DecorativeAccents.tsx": "Reusable decorative components (Star SVG, SectionHeader with confetti banner, FloatingStars background) with `style?: React.CSSProperties` added to StarProps to fix the TypeScript error.",
+  "frontend/src/components/LearningCard.tsx": "Tappable card component for letters and numbers with bright colors, bubbly shape, and hover/press animations.",
+  "frontend/src/components/LearningPopup.tsx": "Full-screen animated modal showing a selected letter or number in giant text with a fun fact and a Back button.",
+  "frontend/src/components/MemoryCard.tsx": "Memory game card with CSS 3D flip animation, face-down/face-up states, and matched pair highlighting.",
+  "frontend/src/components/ColorPalette.tsx": "Color palette component with 10 bright color swatches and 4 brush size selectors, all with large tap targets.",
+  "frontend/src/pages/Home.tsx": "Home screen with floating mascot, animated title, confetti banner, three activity navigation cards, and an encouragement section.",
+  "frontend/src/pages/Learning.tsx": "Letters & Numbers learning page with tabbed grid of tappable cards (A–Z and 1–20) and a popup modal for each selection.",
+  "frontend/src/pages/MemoryMatch.tsx": "Memory Match game page with 4×4 card grid, move/pair counters, best score display from backend, and a win celebration overlay.",
+  "frontend/src/pages/Draw.tsx": "Drawing canvas page with a resizable HTML5 canvas, color palette toolbar, brush size selector, and clear button.",
+  "frontend/src/App.tsx": "Main app component setting up TanStack Router with routes for Home, Learning, MemoryMatch, and Draw pages wrapped in the shared Layout."
+}
